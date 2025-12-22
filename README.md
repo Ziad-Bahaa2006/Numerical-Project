@@ -39,9 +39,6 @@ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
 ![Newton Method GUI](screenshots/newton.png)  
 *Interactive GUI allows input of function, initial guess, tolerance, and max iterations.*
 
-**Demo GIF:**  
-![Newton Demo](screenshots/newton_demo.gif)
-
 ---
 
 ### ⚙️ Inputs
@@ -79,20 +76,20 @@ result = newton_method(func_str, x0)
 # Print the approximate root
 print("Root:", result["root"])
 
-Sample Output:  
+# Sample Output:  
 Root: 2.094551  
 Converged in 5 iterations
 ```
 
 ---
 
-###⚠️ Notes
+### ⚠️ Notes
 
--The derivative is calculated automatically; no need to enter manually.
+- The derivative is calculated automatically; no need to enter manually.
 
--If the derivative at a point is zero, the method fails.
+- If the derivative at a point is zero, the method fails.
 
--Always check convergence for difficult functions.
+- Always check convergence for difficult functions.
 
 ---
 
@@ -116,9 +113,6 @@ x_{n+1} = x_n - f(x_n)\frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}
 
 ![Secant Method GUI](screenshots/secant.png)  
 *Interactive GUI allows input of function, two initial guesses, tolerance, and max iterations.*
-
-**Demo GIF:**  
-![Secant Demo](screenshots/secant_demo.gif)
 
 ---
 
@@ -154,11 +148,17 @@ x0, x1 = 2, 3
 root, steps = secant_method(f, x0, x1)
 
 print("Root:", root)
-Sample Output:
+
+# Sample Output:
 Root: 2.094551
 Converged in 6 iterations
 ```
-###⚠️ Notes
+### ⚠️ Notes
+- This method does not require the derivative.
+
+- Convergence is not guaranteed; choose initial guesses carefully.
+
+- Division by zero can occur if f(x1) - f(x0) = 0.
 
 This method does not require the derivative.
 
@@ -166,3 +166,79 @@ Convergence is not guaranteed; choose initial guesses carefully.
 
 Division by zero can occur if f(x1) - f(x0) = 0.
 
+---
+
+## 3️⃣ Jacobi Method
+
+> **Purpose:**  
+> Iteratively solves a system of linear equations \(Ax = b\).  
+> Suitable for diagonally dominant or well-conditioned matrices.
+
+---
+
+### 🔹 Algorithm
+
+For each iteration:
+
+\[
+x_i^{(k+1)} = \frac{1}{a_{ii}}\left(b_i - \sum_{j \neq i} a_{ij}x_j^{(k)}\right)
+\]
+
+Repeat until the solution converges within a specified tolerance.
+
+---
+
+### 🖥 GUI Preview
+
+![Jacobi Method GUI](screenshots/jacobi.png)  
+*GUI allows entry of matrix A, vector b, initial guess x0, tolerance, and max iterations.*
+
+---
+
+### ⚙️ Inputs
+
+- **Matrix \(A\)**: Coefficient matrix  
+- **Vector \(b\)**: Right-hand side  
+- **Initial guess \(x_0\)**: Starting vector  
+- **Tolerance**: Convergence criterion  
+- **Maximum iterations**: Iteration limit  
+
+---
+
+### 📊 Outputs
+
+- **Solution vector**  
+- **Convergence message** (success or failure)
+
+---
+
+### 🧪 Example Usage
+
+```python
+import numpy as np
+from jacobi_method import jacobi_method
+
+A = np.array([
+    [10, -1, 2, 0],
+    [-1, 11, -1, 3],
+    [2, -1, 10, -1],
+    [0, 3, -1, 8]
+])
+
+b = np.array([6, 25, -11, 15])
+x0 = np.zeros(4)
+
+solution = jacobi_method(A, b, x0, tol=1e-6, max_iter=100)
+print("Solution:", solution)
+
+# Sample Output:
+Solution: [1.0, 2.0, -1.0, 1.0]
+Converged in 15 iterations
+```
+### ⚠️ Notes
+
+- Convergence is guaranteed for diagonally dominant matrices.
+
+- For non-diagonally dominant matrices, the method may fail to converge.
+
+- Ensure matrix 𝐴 is square and consistent with vector b.
