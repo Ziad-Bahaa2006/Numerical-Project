@@ -160,12 +160,6 @@ Converged in 6 iterations
 
 - Division by zero can occur if f(x1) - f(x0) = 0.
 
-This method does not require the derivative.
-
-Convergence is not guaranteed; choose initial guesses carefully.
-
-Division by zero can occur if f(x1) - f(x0) = 0.
-
 ---
 
 ## 3️⃣ Jacobi Method
@@ -242,3 +236,74 @@ Converged in 15 iterations
 - For non-diagonally dominant matrices, the method may fail to converge.
 
 - Ensure matrix 𝐴 is square and consistent with vector b.
+
+---
+
+## 4️⃣ Linear Least Squares & Linearization
+
+> **Purpose:**  
+> Fits a set of data points to multiple models and selects the **best-fitting model** automatically using the **least squares criterion**.  
+> Supports **linear, exponential, power, and growth rate models**.
+
+---
+
+### 🔹 Supported Models
+
+| Model Type       | Formula                     | Linearized Form                  |
+|-----------------|-----------------------------|---------------------------------|
+| Linear           | \(y = ax + b\)             | \(y = ax + b\)                  |
+| Exponential      | \(y = b e^{ax}\)           | \(\ln(y) = ax + \ln(b)\)       |
+| Power            | \(y = b x^a\)              | \(\ln(y) = a \ln(x) + \ln(b)\)|
+| Growth Rate      | \(y = \frac{ax}{b + x}\)  | \(\frac{1}{y} = \frac{b}{a}\frac{1}{x} + \frac{1}{a}\)|
+
+---
+
+### 🖥 GUI Preview
+
+![Linearization GUI](screenshots/linearization.png)  
+*Interactive GUI allows entry of x and y values, fits all supported models, and displays the best fit.*
+
+---
+
+### ⚙️ Inputs
+
+- **x values**: Comma-separated numbers, e.g., `1,2,3,4`  
+- **y values**: Comma-separated numbers, same length as x  
+
+---
+
+### 📊 Outputs
+
+- **All tested models** with coefficients \(a, b\) and sum of squared residuals  
+- **Best model** automatically selected based on minimum error  
+- **Prediction results** can be computed using returned coefficients  
+
+---
+
+### 🧪 Example Usage
+
+```python
+from logic import auto_fit_best_model
+
+x = [1, 2, 3, 4, 5]
+y = [2.3, 4.5, 7.1, 9.0, 11.2]
+
+result = auto_fit_best_model(x, y)
+
+print("Best Model:", result["best_model"]["model"])
+print("Coefficients: a =", result["best_model"]["a"], ", b =", result["best_model"]["b"])
+
+# Sample Output:
+Best Model: Linear: y = ax + b
+Coefficients: a = 2.23 , b = 0.12
+Sum of squared residuals = 0.05
+```
+### ⚠️ Notes
+
+- Ensure all x and y values are numerical and of equal length.
+
+- Exponential and power models require positive y values.
+
+- Growth rate model requires non-zero x and y values.
+
+- The method automatically selects the model with minimum sum of squared residuals.
