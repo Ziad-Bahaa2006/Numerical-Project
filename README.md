@@ -251,10 +251,10 @@ Converged in 15 iterations
 
 | Model Type       | Formula                     | Linearized Form                  |
 |-----------------|-----------------------------|---------------------------------|
-| Linear           | \(y = ax + b\)             | \(y = ax + b\)                  |
-| Exponential      | \(y = b e^{ax}\)           | \(\ln(y) = ax + \ln(b)\)       |
-| Power            | \(y = b x^a\)              | \(\ln(y) = a \ln(x) + \ln(b)\)|
-| Growth Rate      | \(y = \frac{ax}{b + x}\)  | \(\frac{1}{y} = \frac{b}{a}\frac{1}{x} + \frac{1}{a}\)|
+| Linear           | $y = ax + b$               | $y = ax + b$                    |
+| Exponential      | $y = b e^{ax}$             | $\ln(y) = ax + \ln(b)$          |
+| Power            | $y = b x^a$                | $\ln(y) = a \ln(x) + \ln(b)$    |
+| Growth Rate      | $y = \frac{ax}{b + x}$     | $\frac{1}{y} = \frac{b}{a}\frac{1}{x} + \frac{1}{a}$ |
 
 ---
 
