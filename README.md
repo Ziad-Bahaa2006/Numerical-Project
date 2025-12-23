@@ -307,3 +307,21 @@ Sum of squared residuals = 0.05
 - Growth rate model requires non-zero x and y values.
 
 - The method automatically selects the model with minimum sum of squared residuals.
+
+---
+
+## 👥 Team Members 
+
+This project was developed collaboratively by the Numerical Computing course team.
+
+| Name             | Role / Responsibility           |
+|-----------------|---------------------------------|
+| Ziad Bahaa Elsayed        | Newton Method   |
+| Haitham Noor  | Secant Method                   |
+| Hassan Ashraf  | Jacobi Method                   |
+| Tarek Amr  | Gauss-Seidel Method             |
+| Mohamed Ahmed  | Bisection Method                |
+| Anas Mostafa  | False Position Method           |
+| Mohamed Islam  | Linear Least Squares / Linearization |
+
+> Each contributor is responsible for coding, testing, and documenting their assigned method.
