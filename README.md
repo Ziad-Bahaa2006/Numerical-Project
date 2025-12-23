@@ -36,7 +36,7 @@ x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
 
 ### 🖥 GUI Preview
 
-![Newton Method GUI](screenshots/newton.png)  
+![Newton Method GUI](screenshots/Newton_Method_GUI.png)  
 *Interactive GUI allows input of function, initial guess, tolerance, and max iterations.*
 
 ---
@@ -111,7 +111,7 @@ x_{n+1} = x_n - f(x_n)\frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}
 
 ### 🖥 GUI Preview
 
-![Secant Method GUI](screenshots/secant.png)  
+![Secant Method GUI](screenshots/Secant_Method_GUI.png)  
 *Interactive GUI allows input of function, two initial guesses, tolerance, and max iterations.*
 
 ---
@@ -184,7 +184,7 @@ Repeat until the solution converges within a specified tolerance.
 
 ### 🖥 GUI Preview
 
-![Jacobi Method GUI](screenshots/jacobi.png)  
+![Jacobi Method GUI](screenshots/Jacobi_Method_GUI.png)  
 *GUI allows entry of matrix A, vector b, initial guess x0, tolerance, and max iterations.*
 
 ---
@@ -260,7 +260,7 @@ Converged in 15 iterations
 
 ### 🖥 GUI Preview
 
-![Linearization GUI](screenshots/linearization.png)  
+![Linearization GUI](screenshots/Linearization_GUI.png)  
 *Interactive GUI allows entry of x and y values, fits all supported models, and displays the best fit.*
 
 ---
