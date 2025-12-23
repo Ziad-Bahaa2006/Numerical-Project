@@ -28,9 +28,9 @@ Each method has its **own GUI**, **clear inputs and outputs**, and example usage
 
 ### 🔹 Mathematical Formula
 
-\[
+$$
 x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}
-\]
+$$
 
 ---
 
@@ -103,9 +103,9 @@ Converged in 5 iterations
 
 ### 🔹 Mathematical Formula
 
-\[
+$$
 x_{n+1} = x_n - f(x_n)\frac{x_n - x_{n-1}}{f(x_n) - f(x_{n-1})}
-\]
+$$
 
 ---
 
@@ -174,9 +174,9 @@ Converged in 6 iterations
 
 For each iteration:
 
-\[
-x_i^{(k+1)} = \frac{1}{a_{ii}}\left(b_i - \sum_{j \neq i} a_{ij}x_j^{(k)}\right)
-\]
+$$
+x_i^{(k+1)} = \frac{1}{a_{ii}}\left(b_i - \sum_{j \ne i} a_{ij} x_j^{(k)} \right), \quad i=1,2,\dots,n
+$$
 
 Repeat until the solution converges within a specified tolerance.
 
